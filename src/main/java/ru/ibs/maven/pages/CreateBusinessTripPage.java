@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
- * @author Arkadiy_Alaverdyan
- * Стартовая страница приложения
+ *
+ * Страница заполнения полей для создания командировки
  */
 public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
 
@@ -143,40 +143,4 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
         Assert.assertTrue("Отсутствует сообщение о списке командируемых", errorList.isDisplayed());
         return this;
     }
-
-    /**
-     * Функция наведения мыши на любой пункт меню
-     *
-     * @param nameBaseMenu - наименование меню
-     * @return CreateBusinessTripPage - т.е. остаемся на этой странице
-     */
-//    public CreateBusinessTripPage selectBaseMenu(String nameBaseMenu) {
-//        for (WebElement menuItem : listBaseMenu) {
-//            if (menuItem.getText().trim().equalsIgnoreCase(nameBaseMenu)) {
-//                waitUtilElementToBeClickable(menuItem).click();
-//                return this;
-//            }
-//        }
-//        Assert.fail("Меню '" + nameBaseMenu + "' не было найдено на стартовой странице!");
-//        return this;
-//    }
-
-    /**
-     * Функция клика на любое подменю
-     *
-     * @param nameSubMenu - наименование подменю
-     * @return InsurancePage - т.е. переходим на страницу {@link ru.appline.framework.pages.TrainingPage}
-     */
-//    public TrainingPage selectSubMenu(String nameSubMenu) {
-//        for (WebElement menuItem : listSubMenu) {
-//            if (menuItem.getText().equalsIgnoreCase(nameSubMenu)) {
-//                waitUtilElementToBeClickable(menuItem).click();
-//                return pageManager.getInsurancePage().checkOpenInsurancePage();
-//            }
-//        }
-//        Assert.fail("Подменю '" + nameSubMenu + "' не было найдено на стартовой странице!");
-//        return pageManager.getInsurancePage();
-//    }
-
-
 }

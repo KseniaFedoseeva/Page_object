@@ -14,23 +14,12 @@ public class TrainingPage extends ru.ibs.maven.pages.BasePage {
     @FindBy(xpath = "//h1[text() = 'Панель быстрого запуска']")
     private WebElement title;
 
-
     @FindBy(xpath = "//span[contains(@class, 'title') and text()='Расходы']")
     private WebElement costs;
 
     @FindBy(xpath = "//span[(@class = 'title') and text()= 'Командировки']")
     private WebElement businessTrip;
 
-    /**
-     * Проверка открытия страницы, путём проверки title страницы
-     *
-     * @return TrainingPage - т.е. остаемся на этой странице
-     */
-    public TrainingPage checkOpenInsurancePage() {
-        Assert.assertEquals("Заголовок отсутствует/не соответствует требуемому",
-                "Страхование путешественников", title.getText());
-        return this;
-    }
     /**
      * Разворачиваем секцию расходы
      *
@@ -41,7 +30,6 @@ public class TrainingPage extends ru.ibs.maven.pages.BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(costs));
         costs.click();
         return this;
-     //   return pageManager.getSelectInsuranceServicePage().checkOpenSelectInsuranceServicePage();
     }
 
     /**
@@ -55,9 +43,5 @@ public class TrainingPage extends ru.ibs.maven.pages.BasePage {
         businessTrip.click();
         return pageManager.getOpenBusinessTripPage().checkOpenBusinessTripPage();
     }
-
-
-
-
 
 }

@@ -1,7 +1,7 @@
 package ru.ibs.maven.util;
 
 /**
- * @author Arkadiy_Alaverdyan
+ *
  * Класс констант для удобного доступа к значения в файле application.properties
  */
 public class PropConst {

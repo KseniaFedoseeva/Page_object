@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
- * @author Arkadiy_Alaverdyan
- * Класс описывающий страничку оформления полиса страхования
+ *
+ * Класс описывающий страничку авторизации
  */
 public class RegistrationFormPage extends BasePage {
 
@@ -65,38 +65,9 @@ public class RegistrationFormPage extends BasePage {
         return this;
     }
 
-    /**
-     * Проверка ошибки относящаяся к конкретному полю на форме
-     *
-     * @param nameField  - имя веб элемента
-     * @param errMassage - ошибка проверяемая которая отображается возле этого поля
-     * @return RegistrationFormPage - т.е. остаемся на этой странице
-     */
-//    public RegistrationFormPage checkErrorMessageAtField(String nameField, String errMassage) {
-//        WebElement element = null;
-//        switch (nameField) {
-//            case "Контакты - Мобильный телефон":
-//                element = phone;
-//                break;
-//            case "Контакты - Электронная почта":
-//                element = email;
-//                break;
-//            case "Контакты - Повтор электронной почты":
-//                element = repeatEmail;
-//                break;
-//            default:
-//                Assert.fail("Поле с наименованием '" + nameField + "' отсутствует на странице " +
-//                        "'Оформления страхования путешественников'");
-//
-//        }
-//        element = element.findElement(By.xpath("./..//span"));
-//        Assert.assertEquals("Проверка ошибки у поля '" + nameField + "' была не пройдена",
-//                errMassage, element.getText());
-//        return this;
-//    }
 
     /**
-     * Клик по кнопке "Войти"
+     * Клик по кнопке
      *
      * @return RegistrationFormPage - т.е. остаемся на этой странице
      */

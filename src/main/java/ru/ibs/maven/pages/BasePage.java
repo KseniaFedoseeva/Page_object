@@ -13,7 +13,7 @@ import ru.ibs.maven.manager.PageManager;
 import ru.ibs.maven.manager.TestPropManager;
 
 /**
- * @author Arkadiy_Alaverdyan
+ *
  * Базовый класс всех страничек
  */
 public class BasePage {

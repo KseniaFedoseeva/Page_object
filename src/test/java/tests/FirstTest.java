@@ -17,25 +17,41 @@ public class FirstTest extends BaseTests {
     @Test
     public void startTest() {
 
-        //заполнили поля для авторизации
+        /**
+         * заполнили поля для авторизации
+         */
 
         registrationFormPage.fillField("Логин", "Секретарь");
         registrationFormPage.fillField("Пароль", "testing");
 
-        // Клик по кнопке войти
+        /**
+        * Клик по кнопке войти
+        */
+
         registrationFormPage.clickBtnEnter();
 
-        // Клик по меню Расходы
+        /**
+         * Клик по меню Расходы
+         */
+
         trainingPage.selectCostsBlock();
 
-        // Выбор меню командировки
+        /**
+         * Выбор меню командировки
+         */
+
         trainingPage.openBusinessTripPage();
 
-        // Переход к созданию командировки
+        /**
+         * Переход к созданию командировки
+         */
+
         businessTripPage.selectCreateBusinessTrip();
 
-        //Заполнение полей
-
+        /**
+         * Заполнение полей
+         */
+        
         createBusinessTripPage.choseDepartment();
         createBusinessTripPage.choseCompany();
         createBusinessTripPage.bookingTicket();

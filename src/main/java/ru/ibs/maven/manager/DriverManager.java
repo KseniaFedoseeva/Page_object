@@ -9,13 +9,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import static ru.ibs.maven.util.PropConst.*;
 
 /**
- * @author Arkadiy_Alaverdyan
+ *
  * Класс для управления веб драйвером
  */
 public class DriverManager {
 
     /**
-     * Переменна для хранения объекта веб-драйвера
+     * Переменная для хранения объекта веб-драйвера
      *
      * @see WebDriver
      */

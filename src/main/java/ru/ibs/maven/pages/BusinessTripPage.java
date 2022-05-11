@@ -45,16 +45,4 @@ public class BusinessTripPage extends BasePage {
 
     }
 
-    /**
-     * Клик по кнопке "Оформить"
-     *
-     * @return RegistrationFormPage - т.е. переходим на страницу {@link ru.appline.framework.pages.RegistrationFormPage}
-     */
-//    public RegistrationFormPage checkoutInsuranceOnline() {
-//        scrollToElementJs(checkoutButton);
-//        waitUtilElementToBeClickable(checkoutButton).click();
-//        return pageManager.getRegistrationFormPage().checkOpenRegistrationFormPage();
-//    }
-
-
 }
