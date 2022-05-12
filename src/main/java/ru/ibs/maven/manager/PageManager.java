@@ -7,7 +7,7 @@ import ru.ibs.maven.pages.TrainingPage;
 
 
 /**
- * @author Arkadiy_Alaverdyan
+ *
  * Класс для управления страничками
  */
 public class PageManager {
@@ -18,14 +18,9 @@ public class PageManager {
     private static PageManager pageManager;
 
     /**
-     * Стартовая страничка
+     * Cтраница перехода в раздел командировок
      */
-    private CreateBusinessTripPage homePage;
-
-    /**
-     * Страничка страхование путешественников
-     */
-    private TrainingPage insurancePage;
+    private TrainingPage goToBusinessTripPage;
 
     /**
      * Страничка командировок
@@ -38,7 +33,7 @@ public class PageManager {
     private CreateBusinessTripPage openCreateBusinessTripPage;
 
     /**
-     * Страничка оформления полиса страхования
+     * Страничка авторизации
      */
     private RegistrationFormPage registrationFormPage;
 
@@ -62,28 +57,17 @@ public class PageManager {
         return pageManager;
     }
 
-    /**
-     * Ленивая инициализация {@link CreateBusinessTripPage}
-     *
-     * @return StartPage
-     */
-    public CreateBusinessTripPage getHomePage() {
-        if (homePage == null) {
-            homePage = new CreateBusinessTripPage();
-        }
-        return homePage;
-    }
 
     /**
      * Ленивая инициализация {@link TrainingPage}
      *
      * @return InsurancePage
      */
-    public TrainingPage getInsurancePage() {
-        if (insurancePage == null) {
-            insurancePage = new TrainingPage();
+    public TrainingPage getGoToBusinessTripPage() {
+        if (goToBusinessTripPage == null) {
+            goToBusinessTripPage = new TrainingPage();
         }
-        return insurancePage;
+        return goToBusinessTripPage;
     }
 
     /**
@@ -99,9 +83,9 @@ public class PageManager {
     }
 
     /**
-     * Ленивая инициализация {@link BusinessTripPage}
+     * Ленивая инициализация
      *
-     * @return BusinessTripPage
+     * @return CreateBusinessTripPage
      */
     public CreateBusinessTripPage getOpenCreateBusinessTripPage() {
         if (openCreateBusinessTripPage == null) {

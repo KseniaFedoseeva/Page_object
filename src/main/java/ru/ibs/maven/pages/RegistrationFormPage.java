@@ -69,24 +69,14 @@ public class RegistrationFormPage extends BasePage {
     /**
      * Клик по кнопке
      *
-     * @return RegistrationFormPage - т.е. остаемся на этой странице
+     *
+     * @return
      */
-    public RegistrationFormPage clickBtnEnter() {
+    public TrainingPage clickBtnEnter() {
 
         wait.until(ExpectedConditions.elementToBeClickable(btnEnter));
         btnEnter.click();
-        return this;
+        return pageManager.getGoToBusinessTripPage();
     }
 
-    /**
-     * Проверка общей ошибки
-     *
-     * @return RegistrationFormPage - т.е. остаемся на этой странице
-     */
-    public RegistrationFormPage checkErrorMessageAlert(String errMessage) {
-        Assert.assertEquals("Проверка ошибки у alert на странице " +
-                        "'Оформления страхования путешественников' было не пройдено",
-                errMessage, errorMessageAlert.getText());
-        return this;
-    }
 }

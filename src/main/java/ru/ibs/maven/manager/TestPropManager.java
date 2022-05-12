@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @author Arkadiy_Alaverdyan
+ *
  * Класс для управления пропертями
  */
 public class TestPropManager {
 
     /**
-     * Переменна для хранения данных считанных из файла properties и переданных пользователем
+     * Переменная для хранения данных считанных из файла properties и переданных пользователем
      * Т.е. переменная для хранения пользовательских properties
      *
      * @see Properties - реализован на основе {@link java.util.Hashtable}

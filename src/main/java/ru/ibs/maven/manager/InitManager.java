@@ -2,12 +2,11 @@ package ru.ibs.maven.manager;
 
 import java.util.concurrent.TimeUnit;
 
-import static ru.ibs.maven.util.PropConst.*;
 import static ru.ibs.maven.util.PropConst.IMPLICITLY_WAIT;
 import static ru.ibs.maven.util.PropConst.PAGE_LOAD_TIMEOUT;
 
 /**
- * @author Fedoseeva Ksenia
+ *
  * Класс для инициализации фреймворка
  */
 public class InitManager {
