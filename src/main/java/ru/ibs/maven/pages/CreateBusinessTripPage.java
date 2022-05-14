@@ -1,5 +1,6 @@
 package ru.ibs.maven.pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,6 +57,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
      *
      * @return CreateBusinessTripPage - т.е. остаемся на этой странице
      */
+
     public CreateBusinessTripPage checkOpenCreateBusinessTripPage() {
         wait.until(ExpectedConditions.visibilityOf(title));
         wait.until(ExpectedConditions.attributeContains(title, "class", "logo logo-text"));
@@ -65,6 +67,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция выбора подразделения
      */
+    @Step ("Выбираем подразделение")
     public CreateBusinessTripPage choseDepartment() {
         try {
             Thread.sleep(5000);
@@ -79,6 +82,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция выбора организации
      */
+    @Step ("Выбираем организацию")
     public CreateBusinessTripPage choseCompany() {
         openListCompanies.click();
         listCompanies.click();
@@ -87,8 +91,9 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     }
 
     /**
-     * Функция выбора города отправления
+     * Функция бронирования билетов
      */
+    @Step ("Бронируем билет")
     public CreateBusinessTripPage bookingTicket (){
         bookingTicket.click();
         return this;
@@ -97,6 +102,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция выбора города отправления
      */
+    @Step ("Выбираем пункт отправления")
     public CreateBusinessTripPage choseDepartCity (String city){
         depCity.click();
         depCity.clear();
@@ -108,6 +114,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция выбора города прибытия
      */
+    @Step ("Выбираем пункт прибытия")
     public CreateBusinessTripPage choseArriveCity (String city){
        arrCity.click();
        arrCity.sendKeys(city);
@@ -118,6 +125,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция даты отъезда
      */
+    @Step ("Выбираем дату отправления")
     public CreateBusinessTripPage choseDepartDate (String date){
        dateDeparture.sendKeys(date);
        dateDeparture.submit();
@@ -128,6 +136,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция даты приезда
      */
+    @Step ("Выбираем дату прибытия")
     public CreateBusinessTripPage choseArriveDate (String date){
         dateArrival.sendKeys(date);
         dateArrival.submit();
@@ -138,6 +147,7 @@ public class CreateBusinessTripPage extends ru.ibs.maven.pages.BasePage {
     /**
      * Функция для нажатия Сохранить и закрыть
      */
+    @Step ("Нажимаем 'Сохранить и закрыть' и проверяем сообщение о необходимости дозаполнить поля")
     public CreateBusinessTripPage saveAndClose (){
         saveAndClose.submit();
         Assert.assertTrue("Отсутствует сообщение о списке командируемых", errorList.isDisplayed());

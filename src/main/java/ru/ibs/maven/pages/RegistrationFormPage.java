@@ -1,5 +1,6 @@
 package ru.ibs.maven.pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,6 +45,7 @@ public class RegistrationFormPage extends BasePage {
      * @param value     - значение вводимое в поле
      * @return RegistrationFormPage - т.е. остаемся на этой странице
      */
+    @Step("Заполнение формы входа в систему")
     public RegistrationFormPage fillField(String nameField, String value) {
         WebElement element = null;
         switch (nameField) {
@@ -72,6 +74,7 @@ public class RegistrationFormPage extends BasePage {
      *
      * @return
      */
+    @Step ("Кликаем на кнопку для входа в систему после заполнения логина/пароля")
     public TrainingPage clickBtnEnter() {
 
         wait.until(ExpectedConditions.elementToBeClickable(btnEnter));

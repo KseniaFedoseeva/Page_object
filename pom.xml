@@ -23,6 +23,7 @@
         <!-- Dependencies Version -->
         <selenium-java.version>3.141.59</selenium-java.version>
         <junit.version>4.13.1</junit.version>
+        <aspectj.version>1.9.5</aspectj.version>
     </properties>
 
     <dependencies>
@@ -39,6 +40,22 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.13.5</version>
+
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+
         </dependency>
 
     </dependencies>
@@ -69,8 +86,37 @@
                     <argLine>
                         -Xmx1024m
                         -Dfile.encoding=${encoding.type}
-                    </argLine>
+                        -Dallure.results.directory=${project.build.directory}/reports/allure-results
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                                            </argLine>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>ru.ibs.maven.util.AllureListener</value>
+                        </property>
+                    </properties>
                 </configuration>
+            </plugin>
+
+            <!-- Плагин, который отвечает за формирование сайта Allure отчета -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>2.10.0</reportVersion>
+                    <resultsDirectory>${project.build.directory}/reports/allure-results</resultsDirectory>
+                    <reportDirectory>${project.build.directory}/reports/allure-reports</reportDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>allure-plugin</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>

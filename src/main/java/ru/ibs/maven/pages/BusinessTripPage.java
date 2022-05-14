@@ -1,5 +1,6 @@
 package ru.ibs.maven.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,6 +33,7 @@ public class BusinessTripPage extends BasePage {
      *
      * @return CreateBusinessTripPage - т.е. перешли на страницу создания командировки
      */
+    @Step ("Клик по кнопке Создать командировку")
     public CreateBusinessTripPage selectCreateBusinessTrip() {
         wait.until(ExpectedConditions.elementToBeClickable(btnCreateBusinessTrip));
         wait.until(ExpectedConditions.attributeContains(btnCreateBusinessTrip, "title", "Создать командировку"));

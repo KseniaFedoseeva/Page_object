@@ -1,5 +1,6 @@
 package ru.ibs.maven.pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,7 +26,7 @@ public class TrainingPage extends ru.ibs.maven.pages.BasePage {
      *
      * @return TrainingPage - т.е. остаемся на этой странице
      */
-
+    @Step("Выбираем раздел Расходы")
     public TrainingPage selectCostsBlock() {
         wait.until(ExpectedConditions.elementToBeClickable(costs));
         costs.click();
@@ -37,7 +38,7 @@ public class TrainingPage extends ru.ibs.maven.pages.BasePage {
      *
      * @return BusinessTripPage - т.е. переходим на страницу командировок
      */
-
+    @Step ("Переходим в раздел Командировки")
     public ru.ibs.maven.pages.BusinessTripPage openBusinessTripPage (){
         wait.until(ExpectedConditions.elementToBeClickable(businessTrip));
         businessTrip.click();
